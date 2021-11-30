@@ -144,7 +144,7 @@ async def get_youtube_audio(event: types.Message):
                 pass
         except Exception as e:
             traceback.print_exc()
-            await event.answer(__('download_error') + ' ' + str(e))
+            await event.answer(__('download_error try again ') + ' ' + str(e))
         finally:
             await tmp_msg.delete()
             try:
@@ -292,7 +292,7 @@ async def get_album(event: types.Message):
                 pass
         except Exception as e:
             await tmp_msg.delete()
-            await event.answer(__('download_error') + ' ' + str(e))
+            await event.answer(__('download_error try again ') + ' ' + str(e))
         finally:
             try:
                 downloading_users.remove(event.from_user.id)
@@ -367,7 +367,7 @@ async def get_playlist(event: types.Message):
                     pass
         except Exception as e:
             await tmp_msg.delete()
-            await event.answer(__('download_error') + ' ' + str(e))
+            await event.answer(__('download_error try again ') + ' ' + str(e))
         finally:
             try:
                 downloading_users.remove(event.from_user.id)
